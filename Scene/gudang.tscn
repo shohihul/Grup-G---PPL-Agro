@@ -1,0 +1,332 @@
+[gd_scene load_steps=18 format=1]
+
+[ext_resource path="res://Script/gudang.gd" type="Script" id=1]
+[ext_resource path="res://Asset/game/bg2.png" type="Texture" id=2]
+[ext_resource path="res://Asset/inventaris.png" type="Texture" id=3]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_001.png" type="Texture" id=4]
+[ext_resource path="res://Asset/tempatJumlah.png" type="Texture" id=5]
+[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_002.png" type="Texture" id=7]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_004.png" type="Texture" id=8]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_005.png" type="Texture" id=9]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_006.png" type="Texture" id=10]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_003.png" type="Texture" id=11]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_007.png" type="Texture" id=12]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_008.png" type="Texture" id=13]
+[ext_resource path="res://database/icon_inventaris/genericItem_color_009.png" type="Texture" id=14]
+[ext_resource path="res://Scene/coin.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Asset/kembali.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 23
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 6 )
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+
+transform/pos = Vector2( 638.949, 359.972 )
+texture = ExtResource( 2 )
+
+[node name="title" type="Sprite" parent="."]
+
+transform/pos = Vector2( 637.213, 81.6077 )
+transform/scale = Vector2( 1.77985, 1.77985 )
+texture = ExtResource( 3 )
+
+[node name="air" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 180.79, 245.607 )
+texture = ExtResource( 4 )
+
+[node name="tempat" type="Sprite" parent="air"]
+
+transform/pos = Vector2( 0, 117.35 )
+texture = ExtResource( 5 )
+
+[node name="jumlahAir" type="Label" parent="air"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -67.252
+margin/top = 106.192
+margin/right = 62.0
+margin/bottom = 157.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sekop" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 182.087, 537.96 )
+texture = ExtResource( 7 )
+
+[node name="tempat" type="Sprite" parent="sekop"]
+
+transform/pos = Vector2( 0.063446, 115.874 )
+texture = ExtResource( 5 )
+
+[node name="adaSekop" type="Label" parent="sekop"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -65.0
+margin/top = 106.0
+margin/right = 66.0
+margin/bottom = 157.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="celurit" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 405.538, 245.799 )
+texture = ExtResource( 8 )
+
+[node name="tempat" type="Sprite" parent="celurit"]
+
+transform/pos = Vector2( 0.0734253, 116.916 )
+texture = ExtResource( 5 )
+
+[node name="adaCelurit" type="Label" parent="celurit"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -63.0
+margin/top = 106.0
+margin/right = 67.0
+margin/bottom = 157.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="pupuk" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 402.36, 533.237 )
+texture = ExtResource( 9 )
+
+[node name="tempat" type="Sprite" parent="pupuk"]
+
+transform/pos = Vector2( -2.55014, 120.597 )
+texture = ExtResource( 5 )
+
+[node name="jumlahPupuk" type="Label" parent="pupuk"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -67.0
+margin/top = 111.0
+margin/right = 64.0
+margin/bottom = 162.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sertifikatTanah" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 642.576, 243.721 )
+texture = ExtResource( 10 )
+
+[node name="tempat" type="Sprite" parent="sertifikatTanah"]
+
+transform/pos = Vector2( -0.325073, 118.877 )
+texture = ExtResource( 5 )
+
+[node name="adaSertifikatTanah" type="Label" parent="sertifikatTanah"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -58.0
+margin/top = 108.0
+margin/right = 70.0
+margin/bottom = 159.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="batang" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 643.946, 531.638 )
+texture = ExtResource( 11 )
+
+[node name="tempat" type="Sprite" parent="batang"]
+
+transform/pos = Vector2( -0.334595, 122.196 )
+texture = ExtResource( 5 )
+
+[node name="jumlahBatang" type="Label" parent="batang"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -66.0
+margin/top = 112.0
+margin/right = 64.0
+margin/bottom = 163.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="bibitPutih" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 874.408, 242.512 )
+texture = ExtResource( 12 )
+
+[node name="tempat" type="Sprite" parent="bibitPutih"]
+
+transform/pos = Vector2( -1.33563, 120.203 )
+texture = ExtResource( 5 )
+
+[node name="jumlahBibitPutih" type="Label" parent="bibitPutih"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -64.783
+margin/top = 110.34
+margin/right = 65.783
+margin/bottom = 161.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="bibitMerah" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 873.625, 528.852 )
+texture = ExtResource( 13 )
+
+[node name="tempat" type="Sprite" parent="bibitMerah"]
+
+transform/pos = Vector2( -1.35431, 124.982 )
+texture = ExtResource( 5 )
+
+[node name="jumlahBibitMerah" type="Label" parent="bibitMerah"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -59.0
+margin/top = 115.0
+margin/right = 72.0
+margin/bottom = 166.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="bibitKuning" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 1102.66, 242.162 )
+texture = ExtResource( 14 )
+
+[node name="tempat" type="Sprite" parent="bibitKuning"]
+
+transform/pos = Vector2( -1.63989, 120.553 )
+texture = ExtResource( 5 )
+
+[node name="jumlahBibitKuning" type="Label" parent="bibitKuning"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -64.0
+margin/top = 111.0
+margin/right = 67.0
+margin/bottom = 162.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.118027, 0.671145, 0.863281, 1 )
+text = "12
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="coin" parent="." instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 1170.77, 36.7288 )
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 13.0
+margin/top = 15.0
+margin/right = 235.0
+margin/bottom = 81.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 16 )
+flat = true
+
+

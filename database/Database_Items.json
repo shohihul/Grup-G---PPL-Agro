@@ -1,0 +1,111 @@
+{
+	"0": {
+		"name": "",
+		"icon": "res://database/icon_inventaris/empty_slot.png",
+		"type": "misc",
+		"weight": 0.0,
+		"stackable": false,
+		"description": "",
+		"sell_price": 0
+	},
+	
+	"1": {
+		"name": "Electric Drill",
+		"icon": "res://database/icon_inventaris/genericItem_color_001.png",
+		"type": "equipment",
+		"weight": 10.1,
+		"stackable": false,
+		"description": "Item 1",
+		"sell_price": 95
+	},
+	
+	"2": {
+		"name": "Angle Grinder",
+		"icon": "res://database/icon_inventaris/genericItem_color_002.png",
+		"type": "equipment",
+		"weight": 10.5,
+		"stackable": false,
+		"description": "Item 2",
+		"sell_price": 111
+	},
+	
+	"3": {
+		"name": "Tea Cup",
+		"icon": "res://database/icon_inventaris/genericItem_color_003.png",
+		"type": "misc",
+		"weight": 1.1,
+		"stackable": true,
+		"description": "Item 3",
+		"sell_price": 6
+	},
+	
+	"4": {
+		"name": "Wrench",
+		"icon": "res://database/icon_inventaris/genericItem_color_004.png",
+		"type": "equipment",
+		"weight": 9.5,
+		"stackable": false,
+		"description": "Item 4",
+		"sell_price": 25
+	},
+	
+	"5": {
+		"name": "Screw Driver",
+		"icon": "res://database/icon_inventaris/genericItem_color_005.png",
+		"type": "equipment",
+		"weight": 9.3,
+		"stackable": false,
+		"description": "Item 5",
+		"sell_price": 10
+	},
+	
+	"6": {
+		"name": "Paint Brush",
+		"icon": "res://database/icon_inventaris/genericItem_color_006.png",
+		"type": "equipment",
+		"weight": 0.5,
+		"stackable": false,
+		"description": "Item 6",
+		"sell_price": 7
+	},
+	
+	"7": {
+		"name": "Book",
+		"icon": "res://database/icon_inventaris/genericItem_color_007.png",
+		"type": "misc",
+		"weight": 0.87,
+		"stackable": true,
+		"description": "Item 7",
+		"sell_price": 17
+	},
+	
+	"8": {
+		"name": "Electronic Parts",
+		"icon": "res://database/icon_inventaris/genericItem_color_008.png",
+		"type": "misc",
+		"weight": 2.5,
+		"stackable": true,
+		"description": "Item 8",
+		"sell_price": 30
+	},
+	
+	"9": {
+		"name": "Medicine Capsule",
+		"icon": "res://database/icon_inventaris/genericItem_color_009.png",
+		"type": "consumable",
+		"weight": 0.1,
+		"stackable": true,
+		"description": "Item 9",
+		"sell_price": 10
+	},
+	
+	"10": {
+		"name": "Bandage",
+		"icon": "res://database/icon_inventaris/genericItem_color_010.png",
+		"type": "consumable",
+		"weight": 0.1,
+		"stackable": true,
+		"description": "Item 10",
+		"sell_price": 3
+	},
+}

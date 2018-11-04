@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://Script/tanda.gd" type="Script" id=1]
+[ext_resource path="res://Scene/tanah.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asset/game/tanda.png" type="Texture" id=3]
+[ext_resource path="res://Asset/game/penyangga.png" type="Texture" id=4]
+[ext_resource path="res://Asset/game/bibitMerah.png" type="Texture" id=5]
+[ext_resource path="res://Asset/game/bibitKuning.png" type="Texture" id=6]
+[ext_resource path="res://Asset/game/bibitPutih.png" type="Texture" id=7]
+[ext_resource path="res://Asset/game/pupuk.png" type="Texture" id=8]
+
+[node name="tanaman" type="Button"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -12.0
+margin/top = -12.0
+margin/right = 13.0
+margin/bottom = 12.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = true
+script/script = ExtResource( 1 )
+
+[node name="tanah" parent="." instance=ExtResource( 2 )]
+
+visibility/visible = false
+transform/pos = Vector2( 11.7393, 11.984 )
+
+[node name="tanda" type="Sprite" parent="."]
+
+transform/pos = Vector2( 12.0232, 11.9703 )
+transform/scale = Vector2( 0.728889, 0.728889 )
+texture = ExtResource( 3 )
+
+[node name="penyangga" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 9.60571, -41.7403 )
+texture = ExtResource( 4 )
+
+[node name="bibitMerah" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 11.7132, -12.937 )
+texture = ExtResource( 5 )
+
+[node name="bibitKuning" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 11.7132, -12.937 )
+texture = ExtResource( 6 )
+
+[node name="bibitPutih" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 11.7132, -12.937 )
+texture = ExtResource( 7 )
+
+[node name="pupuk" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 8.55098, 10.7798 )
+texture = ExtResource( 8 )
+
+[connection signal="button_down" from="." to="." method="_on_tanda_button_down"]
+
+

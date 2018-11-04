@@ -297,6 +297,7 @@ max_lines_visible = -1
 
 [node name="popupPengaturan" type="PopupMenu" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -466,13 +467,13 @@ flat = true
 
 [connection signal="pressed" from="petunjuk" to="." method="_on_petunjuk_pressed"]
 
-[connection signal="pressed" from="info" to="." method="_on_info_pressed"]
-
 [connection signal="pressed" from="info" to="." method="_on_Button_pressed"]
 
-[connection signal="pressed" from="pengaturan" to="." method="_on_Button_2_pressed"]
+[connection signal="pressed" from="info" to="." method="_on_info_pressed"]
 
 [connection signal="pressed" from="pengaturan" to="." method="_on_pengaturan_pressed"]
+
+[connection signal="pressed" from="pengaturan" to="." method="_on_Button_2_pressed"]
 
 [connection signal="pressed" from="popupMulai/background2/ya" to="." method="_on_ya_pressed"]
 
@@ -482,9 +483,9 @@ flat = true
 
 [connection signal="pressed" from="popupKeluar/background2/tidakKeluar" to="." method="_on_tidakKeluar_pressed"]
 
-[connection signal="pressed" from="popupPengaturan/background2/close" to="." method="_on_close_pressed"]
-
 [connection signal="pressed" from="popupPengaturan/background2/close" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="popupPengaturan/background2/close" to="." method="_on_close_pressed"]
 
 [connection signal="pressed" from="popupPengaturan/background2/suaraOn" to="." method="_on_suaraOn_pressed"]
 
