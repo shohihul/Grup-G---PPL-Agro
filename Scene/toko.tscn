@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://Script/toko.gd" type="Script" id=1]
 [ext_resource path="res://Asset/game/bg2.png" type="Texture" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://database/icon_inventaris/genericItem_color_008.png" type="Texture" id=11]
 [ext_resource path="res://database/icon_inventaris/genericItem_color_009.png" type="Texture" id=12]
 [ext_resource path="res://Scene/coin.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scene/popUp.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Asset/kembali.png" type="Texture" id=15]
+[ext_resource path="res://Asset/kembali.png" type="Texture" id=14]
+[ext_resource path="res://Asset/Menu/popup/background.png" type="Texture" id=15]
+[ext_resource path="res://Asset/Menu/popup/ok.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -40,6 +41,13 @@ font/font = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=4]
 
 font/size = 25
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+
+font/size = 28
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 3 )
@@ -436,11 +444,6 @@ flat = false
 
 transform/pos = Vector2( 1179.05, 32.5589 )
 
-[node name="popUp" parent="." instance=ExtResource( 14 )]
-
-visibility/visible = false
-transform/pos = Vector2( 634.441, 335.384 )
-
 [node name="kembali" type="Button" parent="."]
 
 focus/ignore_mouse = false
@@ -454,8 +457,49 @@ margin/bottom = 83.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 15 )
+icon = ExtResource( 14 )
 flat = true
+
+[node name="popupPembelian" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 645.576, 363.303 )
+texture = ExtResource( 15 )
+
+[node name="ok" type="Button" parent="popupPembelian"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -22.0
+margin/top = 84.0
+margin/right = 21.0
+margin/bottom = 110.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 16 )
+flat = true
+
+[node name="pesan" type="Label" parent="popupPembelian"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -232.0
+margin/top = -97.0
+margin/right = 230.0
+margin/bottom = 51.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.208862, 0.58765, 0.921875, 1 )
+text = "PESAN"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="air" to="." method="_on_air_pressed"]
 
@@ -486,5 +530,9 @@ flat = true
 [connection signal="pressed" from="info/beliInfo" to="." method="_on_beliInfo_pressed"]
 
 [connection signal="pressed" from="info/tutupInfo" to="." method="_on_tutupInfo_pressed"]
+
+[connection signal="pressed" from="kembali" to="." method="_on_kembali_pressed"]
+
+[connection signal="pressed" from="popupPembelian/ok" to="." method="_on_ok_pressed"]
 
 

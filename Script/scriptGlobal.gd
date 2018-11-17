@@ -5,7 +5,6 @@ onready var isiPopUp = get_node("isiPopup")
 
 func _ready():
 	var isi = "a"
-	isiPopUp.set_text(isi)
 	pass
 
 

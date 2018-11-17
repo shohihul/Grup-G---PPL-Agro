@@ -313,7 +313,7 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 1170.77, 36.7288 )
 
-[node name="Button" type="Button" parent="."]
+[node name="kembali" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -328,5 +328,7 @@ enabled_focus_mode = 2
 shortcut = null
 icon = ExtResource( 16 )
 flat = true
+
+[connection signal="pressed" from="kembali" to="." method="_on_kembali_pressed"]
 
 

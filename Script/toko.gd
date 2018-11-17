@@ -6,10 +6,13 @@ onready var windowInfo = get_node("info")
 onready var deskripsi = get_node("info/deskripsi")
 onready var pilihJumlah = get_node("WindowDialogBeli/pilihJumlah")
 onready var labelBeliAlat = get_node("WindowDialogBeliAlat/labelBeliAlat")
+onready var pembelian = get_node("popupPembelian/pesan")
+onready var popupPembelian = get_node("popupPembelian")
 var isiDeskripsi = ""
 onready var tokoList = get_node("tokoList")
 var idBarang
 var a
+var pesanPembelian
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -135,59 +138,112 @@ func _on_beli_pressed():
 	data.jumlah = pilihJumlah.get_value()
 # ------------------------------------------------- Air
 	if data.idBarang ==  1:
-		data.barang1 += data.jumlah
-		print("jumlah air adalah " + String(data.barang1))
-		data.coin -= 20*data.jumlah
+		data.air += data.jumlah
+		print("jumlah air adalah " + String(data.air))
+		data.coin -= 3*data.jumlah
+		windowBeli.hide()
+		popupPembelian.show()
+		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" Liter Air"
+		pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- Sekop
 	if data.idBarang == 2:
-		if data.barang2 > 0:
-			print("Anda sudah punya barang ini")
+		if data.sekop > 0:
+			windowBeliAlat.hide()
+			popupPembelian.show()
+			pesanPembelian = "Anda sudah punya sekop"
+			pembelian.set_text(pesanPembelian)
 		else:
-			data.barang2 += 1
-			print("Sekop Terbeli")
+			data.sekop += 100
+			data.coin -= 30
+			windowBeliAlat.hide()
+			popupPembelian.show()
+			pesanPembelian = "Berhasil membeli sekop"
+			pembelian.set_text(pesanPembelian)
 
-# ------------------------------------------------- Celurit
+# ------------------------------------------------- Gunting
 	if data.idBarang == 3:
-		if data.barang3 > 0:
-			print("Anda sudah punya barang ini")
+		if data.gunting > 0:
+			windowBeliAlat.hide()
+			popupPembelian.show()
+			pesanPembelian = "Anda sudah punya sekop"
+			pembelian.set_text(pesanPembelian)
 		else:
-			data.barang3 += 1
-			print("Celurit Terbeli")
+			data.gunting += 1
+			data.coin -= 20
+			windowBeliAlat.hide()
+			popupPembelian.show()
+			pesanPembelian = "Berhasil membeli sekop"
+			pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- pupuk
 	if data.idBarang == 4:
-		data.barang4 += data.jumlah
-		print("jumlah pupuk adalah " + String(data.barang4))
+		data.pupuk += data.jumlah
+		data.coin -= 5*data.jumlah
+		windowBeli.hide()
+		popupPembelian.show()
+		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" pupuk"
+		pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- Sertifikat Tanah
 	if data.idBarang == 5:
-		if data.barang5 > 0:
-			print("Anda sudah punya barang ini")
+		if data.sertifikat > 0:
+			windowBeliAlat.hide()
+			popupPembelian.show()
+			pesanPembelian = "Anda sudah punya lahan"
+			pembelian.set_text(pesanPembelian)
 		else:
-			data.barang5 += 1
-			print("Sertifikat Tanah Terbeli")
+			data.sertifikat += 1
+			data.coin -= 1000
+			windowBeliAlat.hide()
+			popupPembelian.show()
+			pesanPembelian = "Berhasil membeli lahan"
+			pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- Batang
 	if data.idBarang == 6:
-		data.barang6 += data.jumlah
-		print("jumlah pupuk adalah " + String(data.barang6))
+		data.penyangga += data.jumlah
+		data.coin -= 7*data.jumlah
+		windowBeli.hide()
+		popupPembelian.show()
+		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" penyangga"
+		pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- Bibit Putih
 	if data.idBarang == 7:
-		data.barang7 += data.jumlah
-		print("jumlah pupuk adalah " + String(data.barang7))
+		data.bibitPutih += data.jumlah
+		data.coin -= 13*data.jumlah
+		windowBeli.hide()
+		popupPembelian.show()
+		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit putih"
+		pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- Bibit Merah
 	if data.idBarang == 8:
-		data.barang6 += data.jumlah
-		print("jumlah pupuk adalah " + String(data.barang8))
+		data.bibitMerah += data.jumlah
+		data.coin -= 10*data.jumlah
+		windowBeli.hide()
+		popupPembelian.show()
+		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit merah"
+		pembelian.set_text(pesanPembelian)
 
 # ------------------------------------------------- Bibit Kuning
 	if data.idBarang == 9:
-		data.barang6 += data.jumlah
-		print("jumlah pupuk adalah " + String(data.barang9))
+		data.bibitKuning += data.jumlah
+		data.coin -= 15*data.jumlah
+		windowBeli.hide()
+		popupPembelian.show()
+		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit kuning"
+		pembelian.set_text(pesanPembelian)
 
 # Scene Gudang
 func _on_gudang_pressed():
 	get_tree().change_scene('res://Scene/gudang.tscn')
+
+
+func _on_kembali_pressed():
+	get_tree().change_scene('res://Scene/gamePlay.tscn')
+
+
+func _on_ok_pressed():
+	get_tree().reload_current_scene()

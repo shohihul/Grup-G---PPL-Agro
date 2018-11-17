@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Script/gamePlay.gd" type="Script" id=1]
 [ext_resource path="res://Asset/game/grass.png" type="Texture" id=2]
 [ext_resource path="res://Asset/game/toko.png" type="Texture" id=3]
 [ext_resource path="res://Asset/game/gudang.png" type="Texture" id=4]
 [ext_resource path="res://Scene/coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scene/popUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Asset/lahanTanam.png" type="Texture" id=6]
+[ext_resource path="res://Asset/Menu/popup/background.png" type="Texture" id=7]
+[ext_resource path="res://Asset/Menu/popup/ok.png" type="Texture" id=8]
+[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 28
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 9 )
 
 [node name="gamePlay" type="Node2D"]
 
@@ -22,10 +32,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 956.0
-margin/top = 370.0
-margin/right = 1202.0
-margin/bottom = 649.0
+margin/left = 137.0
+margin/top = 380.0
+margin/right = 383.0
+margin/bottom = 659.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -52,12 +62,69 @@ flat = true
 
 transform/pos = Vector2( 1172.44, 40.6535 )
 
-[node name="popUp" parent="." instance=ExtResource( 6 )]
+[node name="lahanTanam" type="Button" parent="."]
 
-transform/pos = Vector2( 465.323, 517.465 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 817.0
+margin/top = 304.0
+margin/right = 993.0
+margin/bottom = 432.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 6 )
+flat = true
+
+[node name="popup" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 658.354, 373.995 )
+texture = ExtResource( 7 )
+
+[node name="ok" type="Button" parent="popup"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -21.0
+margin/top = 83.0
+margin/right = 22.0
+margin/bottom = 109.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 8 )
+flat = true
+
+[node name="pesan" type="Label" parent="popup"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -227.0
+margin/top = -95.0
+margin/right = 238.0
+margin/bottom = 66.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0970459, 0.33122, 0.828125, 1 )
+text = "PESAN"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="toko" to="." method="_on_toko_pressed"]
 
 [connection signal="pressed" from="gudang" to="." method="_on_gudang_pressed"]
+
+[connection signal="pressed" from="lahanTanam" to="." method="_on_lahanTanam_pressed"]
+
+[connection signal="pressed" from="popup/ok" to="." method="_on_ok_pressed"]
 
 

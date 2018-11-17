@@ -29,13 +29,17 @@ func _on_tanda_button_down():
 
 # -------------------------------------------------- Menggali tanah
 	if data.pilihAlat == "sekop":
-		if tahap == 0:
-			print("muncul tanah")
-			tanah.show()
-			tanda.hide()
-			tahap = 1
-		elif tahap == 1:
-			print("tanah ini sudah dicangkul")
+		if data.sekop == 0:
+			print("Anda tidak punya sekop atau sekop anda sudah rusak")
+		else:
+			if tahap == 0:
+				print("muncul tanah")
+				tanah.show()
+				tanda.hide()
+				tahap = 1
+				data.sekop -=1
+			elif tahap == 1:
+				print("tanah ini sudah dicangkul")
 # -------------------------------------------------- Menggali Tanah
 
 # -------------------------------------------------- Pemasangan Penyangga

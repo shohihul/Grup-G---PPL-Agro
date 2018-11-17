@@ -10,7 +10,6 @@ onready var jumlahBibitPutih = get_node("bibitPutih/jumlahBibitPutih")
 onready var jumlahBibitMerah = get_node("bibitMerah/jumlahBibitMerah")
 onready var jumlahBibitKuning = get_node("bibitKuning/jumlahBibitKuning")
 
-
 func _ready():
 	
 	
@@ -32,3 +31,7 @@ func _ready():
 	jumlahBibitMerah.set_text(String(data.barang8))
 	jumlahBibitKuning.set_text(String(data.barang9))
 	
+
+
+func _on_kembali_pressed():
+	get_tree().change_scene("res://Scene/gamePlay.tscn")
