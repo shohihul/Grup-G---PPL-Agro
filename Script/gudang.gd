@@ -10,9 +10,18 @@ onready var jumlahBibitPutih = get_node("bibitPutih/jumlahBibitPutih")
 onready var jumlahBibitMerah = get_node("bibitMerah/jumlahBibitMerah")
 onready var jumlahBibitKuning = get_node("bibitKuning/jumlahBibitKuning")
 
+var sekopReady = 0
+var guntingReady = 0
 func _ready():
+	if data.sekop >= 1:
+		sekopReady = 1
+	else:
+		sekopReady = 0
 	
-	
+	if data.gunting >=1:
+		guntingReady = 1
+	else:
+		guntingReady = 0
 #	if (data.sekop == false):
 #		data.sekop = "ada"
 #	
@@ -21,15 +30,15 @@ func _ready():
 #	
 #	if (data.sertifikatTanah == false):
 #		data.sertifikatTanah = "ada" 
-	jumlahAir.set_text(String(data.barang1))
-	adaSekop.set_text(String(data.barang2))
-	adaCelurit.set_text(String(data.barang3))
-	jumlahPupuk.set_text(String(data.barang4))
-	adaSertifikatTanah.set_text(String(data.barang5))
-	jumlahBatang.set_text(String(data.barang6))
-	jumlahBibitPutih.set_text(String(data.barang7))
-	jumlahBibitMerah.set_text(String(data.barang8))
-	jumlahBibitKuning.set_text(String(data.barang9))
+	jumlahAir.set_text(String(data.air))
+	adaSekop.set_text(String(sekopReady))
+	adaCelurit.set_text(String(guntingReady))
+	jumlahPupuk.set_text(String(data.pupuk))
+	adaSertifikatTanah.set_text(String(data.sertifikat))
+	jumlahBatang.set_text(String(data.penyangga))
+	jumlahBibitPutih.set_text(String(data.bibitPutih))
+	jumlahBibitMerah.set_text(String(data.bibitMerah))
+	jumlahBibitKuning.set_text(String(data.bibitKuning))
 	
 
 

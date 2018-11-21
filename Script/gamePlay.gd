@@ -20,7 +20,7 @@ func _on_gudang_pressed():
 
 
 func _on_lahanTanam_pressed():
-	if data.barang5 == 1:
+	if data.sertifikat == 1:
 		get_tree().change_scene('res://Scene/lahan1.tscn')
 	else:
 		isiPesan = "Anda Belum Mempunyai Lahan"

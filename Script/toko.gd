@@ -169,7 +169,7 @@ func _on_beli_pressed():
 			pesanPembelian = "Anda sudah punya sekop"
 			pembelian.set_text(pesanPembelian)
 		else:
-			data.gunting += 1
+			data.gunting += 100
 			data.coin -= 20
 			windowBeliAlat.hide()
 			popupPembelian.show()

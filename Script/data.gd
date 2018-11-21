@@ -4,7 +4,7 @@ var coin = 1500
 var idBarang = 0
 var jumlah
 var pilihAlat = null
-var jenisBibit
+var pilihJenisBibit
 var jenisBarang
 
 
@@ -18,3 +18,31 @@ var penyangga = 0 # 6
 var bibitPutih = 0 # 7
 var bibitMerah = 0 # 8
 var bibitKuning = 0 # 9
+
+var tandaSelect
+#var pohon = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+#tahap, jenisBibit, kadarAir
+var pohon = [
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+[0,0,0],
+]
+#func _ready():
+	
+#	for i in range(16):
+#	    pohon[i]=[]
+#	    for j in range(2): #tahap,tipeBibit
+#	        pohon[i][j]=0
