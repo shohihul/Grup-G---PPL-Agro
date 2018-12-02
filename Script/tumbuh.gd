@@ -27,6 +27,6 @@ func berbuah():
 							data.pohon[i][5] += 2
 						else:
 							data.pohon[i][5] += 1
-		yield(utils.create_timer(60), "timeout")
+		yield(utils.create_timer(180), "timeout")
 		print(data.pohon)
 	pass
