@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://Script/tanda.gd" type="Script" id=1]
 [ext_resource path="res://Asset/game/tanda.png" type="Texture" id=2]
@@ -9,6 +9,21 @@
 [ext_resource path="res://Asset/game/bibitPutih.png" type="Texture" id=7]
 [ext_resource path="res://Asset/game/pupuk.png" type="Texture" id=8]
 [ext_resource path="res://Asset/game/butuhAir.png" type="Texture" id=9]
+[ext_resource path="res://Asset/pohonBesar.png" type="Texture" id=10]
+[ext_resource path="res://Asset/buah/merah/1.png" type="Texture" id=11]
+[ext_resource path="res://Asset/buah/merah/2.png" type="Texture" id=12]
+[ext_resource path="res://Asset/buah/merah/3.png" type="Texture" id=13]
+[ext_resource path="res://Asset/buah/merah/4.png" type="Texture" id=14]
+[ext_resource path="res://Asset/buah/merah/5.png" type="Texture" id=15]
+[ext_resource path="res://Asset/buah/merah/6.png" type="Texture" id=16]
+[ext_resource path="res://Asset/buah/merah/7.png" type="Texture" id=17]
+[ext_resource path="res://Asset/buah/merah/8.png" type="Texture" id=18]
+[ext_resource path="res://Asset/buah/merah/9.png" type="Texture" id=19]
+[ext_resource path="res://Asset/buah/merah/10.png" type="Texture" id=20]
+[ext_resource path="res://Asset/buah/merah/11.png" type="Texture" id=21]
+[ext_resource path="res://Asset/buah/merah/12.png" type="Texture" id=22]
+[ext_resource path="res://Asset/buah/merah/13.png" type="Texture" id=23]
+[ext_resource path="res://Asset/buah/merah/14.png" type="Texture" id=24]
 
 [node name="tanaman" type="Button"]
 
@@ -73,6 +88,96 @@ visibility/visible = false
 transform/pos = Vector2( 59.8077, -45.6455 )
 transform/scale = Vector2( 0.719599, 0.719599 )
 texture = ExtResource( 9 )
+
+[node name="pohonBesar" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 11.4155, -33.3145 )
+texture = ExtResource( 10 )
+
+[node name="1" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -28.3962, -39.9701 )
+texture = ExtResource( 11 )
+
+[node name="2" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 9.95962, -27.8697 )
+texture = ExtResource( 12 )
+
+[node name="3" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -39.0946, -72.836 )
+texture = ExtResource( 13 )
+
+[node name="4" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 16.7259, -54.1685 )
+texture = ExtResource( 14 )
+
+[node name="5" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -2.89848, -40.6926 )
+texture = ExtResource( 15 )
+
+[node name="6" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -44.3014, -46.025 )
+texture = ExtResource( 16 )
+
+[node name="7" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -26.9105, -50.5621 )
+texture = ExtResource( 17 )
+
+[node name="8" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 51.4752, -33.5903 )
+texture = ExtResource( 18 )
+
+[node name="9" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 32.4399, -23.9449 )
+texture = ExtResource( 19 )
+
+[node name="10" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 32.4569, -39.0069 )
+texture = ExtResource( 20 )
+
+[node name="11" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 50.3153, -62.6978 )
+texture = ExtResource( 21 )
+
+[node name="12" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 35.7063, -55.4334 )
+texture = ExtResource( 22 )
+
+[node name="13" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 64.2409, -49.1319 )
+texture = ExtResource( 23 )
+
+[node name="14" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -12.9839, -31.6985 )
+texture = ExtResource( 24 )
 
 [connection signal="pressed" from="." to="." method="_on_tanaman_pressed"]
 

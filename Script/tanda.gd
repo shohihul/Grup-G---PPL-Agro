@@ -7,12 +7,46 @@ var bibitKuning
 var bibitPutih
 var pupuk
 var popupButuhAir
+var pohonBesar
+
+var buah0
+var buah1
+var buah2
+var buah3
+var buah4
+var buah5
+var buah6
+var buah7
+var buah8
+var buah9
+var buah10
+var buah11
+var buah12
+var buah13
+
+onready var lahan = load("res://Script/lahan1.gd")
 
 
 #var jenisBibit
 var tahap = 0
 
+
 func _ready():
+	buah0 = get_node("1")
+	buah1 = get_node("2")
+	buah2 = get_node("3")
+	buah3 = get_node("4")
+	buah4 = get_node("5")
+	buah5 = get_node("6")
+	buah6 = get_node("7")
+	buah7 = get_node("8")
+	buah8 = get_node("9")
+	buah9 = get_node("10")
+	buah10 = get_node("11")
+	buah11 = get_node("12")
+	buah12 = get_node("13")
+	buah13 = get_node("14")
+
 	tanah = get_node("tanah")
 	tanda = get_node("tanda")
 	penyangga = get_node("penyangga")
@@ -21,132 +55,121 @@ func _ready():
 	bibitPutih = get_node("bibitPutih")
 	pupuk = get_node("pupuk")
 	popupButuhAir = get_node("butuhAir")
+	pohonBesar = get_node("pohonBesar")
 	
-	
-#	if butuhAir == true:
-#		popupButuhAir.show()
-#	else:
-#		popupButuhAir.hide()
-
-#	if data.pohon[data.a] == 1:
-#		tanah.show()
-	
-
 func _on_tanaman_pressed():
-
 # -------------------------------------------------- Saat Tanah Kosong
 	if data.pilihAlat == null:
-			print("info tanaman")
+		print("info tanaman")
+		data.aktifitas = "Tempat ini siap untuk ditanam"
 # -------------------------------------------------- Saat Tanah Kosong
 
 # -------------------------------------------------- Menggali tanah
 	if data.pilihAlat == "sekop":
 		if data.sekop == 0:
-			print("Anda tidak punya sekop atau sekop anda sudah rusak")
+			data.aktifitas = "Sekop tidak tersedia"
 		else:
 			if data.pohon[data.tandaSelect][0] == 0:
-				print("muncul tanah")
+				data.aktifitas = "Mencangkul tanah"
 				tanah.show()
 				tanda.hide()
 				tahap = 1
 				data.sekop -=1
 			elif data.pohon[data.tandaSelect][0] == 1:
-				print("tanah ini sudah dicangkul")
+				data.aktifitas = "Tanah ini sudah dicangkul"
 # -------------------------------------------------- Menggali Tanah
 
 # -------------------------------------------------- Pemasangan Penyangga
 	if data.pilihAlat == "penyangga":
 		if data.penyangga == 0:
-			print("Penyangga Habis")
+			data.aktifitas = "Penyangga kosong"
 		else:
 			if data.pohon[data.tandaSelect][0] == 0:
-				print("Cangkul Tanah Dulu")
+				data.aktifitas = "Anda belum mencangkul tanah"
 			elif data.pohon[data.tandaSelect][0] == 1:
-				print("memasang Penyangga")
+				data.aktifitas = "Memasang penyangga"
 				penyangga.show()
 				tahap = 2
 				data.penyangga -= 1
 			elif data.pohon[data.tandaSelect][0] == 2:
-				print("Penyangga telah dipasang")
+				data.aktifitas = "Penyangga sudah dipasang"
 # -------------------------------------------------- Pemasangan Penyangga
 
 # -------------------------------------------------- Menanam Bibit
 	if data.pilihAlat == "bibit":
 		if data.pohon[data.tandaSelect][0] == 0:
-			print("Cangkul Tanah Dulu")
+				data.aktifitas = "Anda belum mencangkul tanah"
 		elif data.pohon[data.tandaSelect][0] == 1:
-			print("pasang penyangga dulu")
+			data.aktifitas = "Memasang penyangga"
 		elif data.pohon[data.tandaSelect][0] == 2:
 # ----------------------------------------------- Merah
 			if data.pilihJenisBibit == 1:
 				if data.bibitMerah == 0:
-					print("Bibit Merah Anda Habis")
+					data.aktifitas = "Stok bibit merah habis"
 				else:
 					bibitMerah.show()
 					tahap = 3
-					data.pohon[data.tandaSelect][1] = 0
 					data.bibitMerah -= 1
 # ----------------------------------------------- Kuning
 			if data.pilihJenisBibit == 2:
 				if data.bibitKuning == 0:
-					print("Bibit Kuning Anda Habis")
+					data.aktifitas = "Stok bibit kuning habis"
 				else:
 					bibitKuning.show()
 					tahap = 3
-					data.pohon[data.tandaSelect][1] = 0
 					data.bibitKuning -= 1
 # ----------------------------------------------- Putih
 			if data.pilihJenisBibit == 3:
 				if data.bibitPutih == 0:
-					print("Bibit Putih Anda Habis")
+					data.aktifitas = "Stok bibit putih habis"
 				else:
 					bibitPutih.show()
 					tahap = 3
-					data.pohon[data.tandaSelect][1] = 0
 					data.bibitPutih -= 1
 			data.pohon[data.tandaSelect][1] = data.pilihJenisBibit
 		elif tahap == 3:
-			print("Tanam Bibit Ditempat Lain")
-			
-		
-			
+			data.aktifitas = "Cari tempat lain"
+
 # -------------------------------------------------- Menanam Bibit
-	
 # -------------------------------------------------- Memberi Pupuk
 	if data.pilihAlat == "pupuk":
 		if data.pupuk == 0:
 			print("Pupuk Anda Habis")
 		else:
 			if data.pohon[data.tandaSelect][0] == 0:
-				print("Cangkul Tanah Dulu")
+				data.aktifitas = "Anda belum mencangkul tanah"
 			elif data.pohon[data.tandaSelect][0] == 1:
-				print("pasang penyangga dulu")
+				data.aktifitas = "Memasang penyangga"
 			elif data.pohon[data.tandaSelect][0] == 2:
-				print("Tanam Bibit dulu")
+				data.aktifitas = "Bibit belum ditanam"
 			elif data.pohon[data.tandaSelect][0] == 3:
-				print("Diberi Pupuk")
+				data.aktifitas = "Memberi Pupuk Organik"
+				tahap = 3
 				pupuk.show()
 				data.pupuk -= 1
 # -------------------------------------------------- Memberi Pupuk
 # -------------------------------------------------- Memberi Air
 	if data.pilihAlat == "air":
 		if data.air == 0:
-			print("Persediaan Air Habis")
+			data.aktifitas = "Persediaan air habis"
 		else:
 			if data.pohon[data.tandaSelect][0] == 0:
-				print("Cangkul Tanah Dulu")
+				data.aktifitas = "Anda belum mencangkul tanah"
 			elif data.pohon[data.tandaSelect][0] == 1:
-				print("pasang penyangga dulu")
+				data.aktifitas = "Memasang penyangga"
 			elif data.pohon[data.tandaSelect][0] == 2:
-				print("Tanam Bibit dulu")
+				data.aktifitas = "Bibit belum ditanam"
 			elif data.pohon[data.tandaSelect][0] == 3:
 				if data.pohon[data.tandaSelect][2] >0:
-					print("Pohon Sudah Disiram")
+					data.aktifitas = "Pohon ini sudah disiram"
+					tahap = 3
 				elif data.pohon[data.tandaSelect][2] <=0:
-					print("Disiram Air")
+					data.aktifitas = "Menyiram Pohon"
 					popupButuhAir.hide()
 					data.air -= 1
+					tahap = 3
 					data.pohon[data.tandaSelect][2] = 100
+					print("Jumlah Air " +String(data.pohon[data.tandaSelect][2]))
 # -------------------------------------------------- Memberi Air
 
 	data.pohon[data.tandaSelect][0] = tahap
@@ -156,4 +179,5 @@ func _on_tanaman_pressed():
 		elif data.pohon[data.tandaSelect][2] > 0:
 			popupButuhAir.hide()
 	
+
 

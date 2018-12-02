@@ -7,8 +7,7 @@ onready var popup = get_node("popup")
 onready var pesan = get_node("popup/pesan")
 var isiPesan
 func _ready():
-	show()
-
+	pass
 
 func _on_toko_pressed():
 	get_tree().change_scene('res://Scene/toko.tscn')

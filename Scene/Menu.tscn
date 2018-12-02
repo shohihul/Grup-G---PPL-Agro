@@ -1,40 +1,46 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://Script/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset/Menu/home/bgHome.png" type="Texture" id=2]
 [ext_resource path="res://Asset/Menu/home/mulaiBaru.png" type="Texture" id=3]
-[ext_resource path="res://Asset/Menu/home/lanjutkan.png" type="Texture" id=4]
-[ext_resource path="res://Asset/Menu/home/keluar.png" type="Texture" id=5]
-[ext_resource path="res://Asset/Menu/home/petunjuk.png" type="Texture" id=6]
-[ext_resource path="res://Asset/Menu/home/info.png" type="Texture" id=7]
-[ext_resource path="res://Asset/Menu/home/pengaturan.png" type="Texture" id=8]
-[ext_resource path="res://Asset/Menu/popup/background.png" type="Texture" id=9]
-[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=10]
-[ext_resource path="res://Asset/close.png" type="Texture" id=11]
-[ext_resource path="res://Asset/soundOn.png" type="Texture" id=12]
-[ext_resource path="res://Asset/off].png" type="Texture" id=13]
-[ext_resource path="res://Asset/musik.png" type="Texture" id=14]
+[ext_resource path="res://Asset/Menu/home/mulaiBaruHover.png" type="Texture" id=4]
+[ext_resource path="res://Asset/Menu/home/lanjutkan.png" type="Texture" id=5]
+[ext_resource path="res://Asset/Menu/home/lanjutkanHover.png" type="Texture" id=6]
+[ext_resource path="res://Asset/Menu/home/keluar.png" type="Texture" id=7]
+[ext_resource path="res://Asset/Menu/home/keluarHover.png" type="Texture" id=8]
+[ext_resource path="res://Asset/Menu/home/petunjuk.png" type="Texture" id=9]
+[ext_resource path="res://Asset/Menu/home/petunjukHover.png" type="Texture" id=10]
+[ext_resource path="res://Asset/Menu/home/info.png" type="Texture" id=11]
+[ext_resource path="res://Asset/Menu/home/infoHover.png" type="Texture" id=12]
+[ext_resource path="res://Asset/Menu/home/pengaturan.png" type="Texture" id=13]
+[ext_resource path="res://Asset/Menu/home/pengaturanHover.png" type="Texture" id=14]
+[ext_resource path="res://Asset/Menu/popup/background.png" type="Texture" id=15]
+[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://Asset/close.png" type="Texture" id=17]
+[ext_resource path="res://Asset/soundOn.png" type="Texture" id=18]
+[ext_resource path="res://Asset/off].png" type="Texture" id=19]
+[ext_resource path="res://Asset/musik.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 26
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 10 )
+font/font = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=2]
 
 font/size = 26
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 10 )
+font/font = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=3]
 
 font/size = 25
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 10 )
+font/font = ExtResource( 16 )
 
 [node name="menu" type="Node2D"]
 
@@ -45,39 +51,47 @@ script/script = ExtResource( 1 )
 transform/pos = Vector2( 640.02, 360.43 )
 texture = ExtResource( 2 )
 
-[node name="mulai" type="Button" parent="."]
+[node name="mulai" type="TextureButton" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -492.0
+margin/top = -279.0
+margin/right = -714.0
+margin/bottom = -350.0
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+textures/normal = ExtResource( 3 )
+textures/hover = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="lanjutkan" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 515.0
-margin/top = 314.0
-margin/right = 749.0
-margin/bottom = 391.0
+margin/left = 525.0
+margin/top = 394.0
+margin/right = 747.0
+margin/bottom = 465.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 3 )
-flat = true
+textures/normal = ExtResource( 5 )
+textures/hover = ExtResource( 6 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
-[node name="lanjutkan" type="Button" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 523.0
-margin/top = 396.0
-margin/right = 745.0
-margin/bottom = 462.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-icon = ExtResource( 4 )
-flat = true
-
-[node name="keluar" type="Button" parent="."]
+[node name="keluar" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -86,30 +100,34 @@ size_flags/vertical = 2
 margin/left = 527.0
 margin/top = 551.0
 margin/right = 749.0
-margin/bottom = 617.0
+margin/bottom = 622.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 5 )
-flat = true
+textures/normal = ExtResource( 7 )
+textures/hover = ExtResource( 8 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
-[node name="petunjuk" type="Button" parent="."]
+[node name="petunjuk" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 523.0
+margin/left = 524.0
 margin/top = 473.0
-margin/right = 745.0
-margin/bottom = 538.0
+margin/right = 746.0
+margin/bottom = 544.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 6 )
-flat = true
+textures/normal = ExtResource( 9 )
+textures/hover = ExtResource( 10 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
-[node name="info" type="Button" parent="."]
+[node name="info" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -122,10 +140,12 @@ margin/bottom = 614.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 7 )
-flat = true
+textures/normal = ExtResource( 11 )
+textures/hover = ExtResource( 12 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
-[node name="pengaturan" type="Button" parent="."]
+[node name="pengaturan" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -138,8 +158,10 @@ margin/bottom = 697.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 8 )
-flat = true
+textures/normal = ExtResource( 13 )
+textures/hover = ExtResource( 14 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="popupMulai" type="PopupMenu" parent="."]
 
@@ -159,9 +181,9 @@ items = [  ]
 [node name="background2" type="Sprite" parent="popupMulai"]
 
 transform/pos = Vector2( 644.722, 318.719 )
-texture = ExtResource( 9 )
+texture = ExtResource( 15 )
 
-[node name="ya" type="Button" parent="popupMulai/background2"]
+[node name="ya" type="LinkButton" parent="popupMulai/background2"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -177,10 +199,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "IYA"
-flat = true
+underline = 2
 
-[node name="tidak" type="Button" parent="popupMulai/background2"]
+[node name="tidak" type="LinkButton" parent="popupMulai/background2"]
 
+hint/tooltip = "asu"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -195,7 +218,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "TIDAK"
-flat = true
+underline = 2
 
 [node name="dataDihapus" type="Label" parent="popupMulai/background2"]
 
@@ -219,6 +242,97 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="nama" type="PopupMenu" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = -2.0
+margin/right = 20.0
+margin/bottom = 18.0
+popup/exclusive = false
+items = [  ]
+
+[node name="background2" type="Sprite" parent="nama"]
+
+transform/pos = Vector2( 644.722, 318.719 )
+texture = ExtResource( 15 )
+
+[node name="simpan" type="Button" parent="nama/background2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -185.0
+margin/top = 66.0
+margin/right = -133.0
+margin/bottom = 99.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0976563, 0.78125, 0.172424, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "SIMPAN"
+flat = true
+
+[node name="batal" type="Button" parent="nama/background2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 86.0
+margin/top = 74.0
+margin/right = 178.0
+margin/bottom = 107.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.878906, 0.243759, 0.243759, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "BATAL"
+flat = true
+
+[node name="dataDihapus" type="Label" parent="nama/background2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -180.0
+margin/top = -132.0
+margin/right = 181.0
+margin/bottom = -27.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.288574, 0.510265, 0.769531, 1 )
+custom_constants/shadow_offset_y = 0
+text = "MASUKKAN NAMA ANDA"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextFieldNama" type="LineEdit" parent="nama/background2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -115.722
+margin/top = -14.719
+margin/right = 123.278
+margin/bottom = 9.28101
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
 [node name="popupKeluar" type="PopupMenu" parent="."]
 
 editor/display_folded = true
@@ -237,7 +351,7 @@ items = [  ]
 [node name="background2" type="Sprite" parent="popupKeluar"]
 
 transform/pos = Vector2( 644.722, 318.719 )
-texture = ExtResource( 9 )
+texture = ExtResource( 15 )
 
 [node name="yaKeluar" type="Button" parent="popupKeluar/background2"]
 
@@ -313,7 +427,7 @@ items = [  ]
 [node name="background2" type="Sprite" parent="popupPengaturan"]
 
 transform/pos = Vector2( 644.722, 318.719 )
-texture = ExtResource( 9 )
+texture = ExtResource( 15 )
 
 [node name="pengaturan" type="Label" parent="popupPengaturan/background2"]
 
@@ -388,7 +502,7 @@ margin/bottom = -91.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 11 )
+icon = ExtResource( 17 )
 flat = true
 clip_text = true
 
@@ -406,7 +520,7 @@ margin/bottom = 89.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 12 )
+icon = ExtResource( 18 )
 flat = true
 
 [node name="suaraOff" type="Button" parent="popupPengaturan/background2/suaraOn"]
@@ -423,7 +537,7 @@ margin/bottom = 51.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 13 )
+icon = ExtResource( 19 )
 flat = true
 
 [node name="musikOn" type="Button" parent="popupPengaturan/background2"]
@@ -439,7 +553,7 @@ margin/bottom = 89.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 14 )
+icon = ExtResource( 20 )
 flat = true
 
 [node name="musikOff" type="Button" parent="popupPengaturan/background2/musikOn"]
@@ -456,7 +570,7 @@ margin/bottom = 52.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 13 )
+icon = ExtResource( 19 )
 flat = true
 
 [connection signal="pressed" from="mulai" to="." method="_on_mulai_pressed"]
@@ -478,6 +592,10 @@ flat = true
 [connection signal="pressed" from="popupMulai/background2/ya" to="." method="_on_ya_pressed"]
 
 [connection signal="pressed" from="popupMulai/background2/tidak" to="." method="_on_tidak_pressed"]
+
+[connection signal="pressed" from="nama/background2/simpan" to="." method="_on_simpan_pressed"]
+
+[connection signal="pressed" from="nama/background2/batal" to="." method="_on_batal_pressed"]
 
 [connection signal="pressed" from="popupKeluar/background2/yaKeluar" to="." method="_on_yaKeluar_pressed"]
 

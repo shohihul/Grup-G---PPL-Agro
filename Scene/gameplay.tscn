@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Script/gamePlay.gd" type="Script" id=1]
 [ext_resource path="res://Asset/game/grass.png" type="Texture" id=2]
@@ -6,16 +6,18 @@
 [ext_resource path="res://Asset/game/gudang.png" type="Texture" id=4]
 [ext_resource path="res://Scene/coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Asset/lahanTanam.png" type="Texture" id=6]
-[ext_resource path="res://Asset/Menu/popup/background.png" type="Texture" id=7]
-[ext_resource path="res://Asset/Menu/popup/ok.png" type="Texture" id=8]
-[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://Asset/lahanTanamHover.png" type="Texture" id=7]
+[ext_resource path="res://Asset/Menu/popup/background.png" type="Texture" id=8]
+[ext_resource path="res://Asset/Menu/popup/ok.png" type="Texture" id=9]
+[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://Scene/nama.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 28
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 9 )
+font/font = ExtResource( 10 )
 
 [node name="gamePlay" type="Node2D"]
 
@@ -23,7 +25,8 @@ script/script = ExtResource( 1 )
 
 [node name="grass" type="Sprite" parent="."]
 
-transform/pos = Vector2( 640.145, 360.309 )
+transform/pos = Vector2( 646.961, 355.765 )
+z/relative = false
 texture = ExtResource( 2 )
 
 [node name="toko" type="Button" parent="."]
@@ -62,27 +65,34 @@ flat = true
 
 transform/pos = Vector2( 1172.44, 40.6535 )
 
-[node name="lahanTanam" type="Button" parent="."]
+[node name="lahanTanam" type="TextureButton" parent="."]
 
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 817.0
-margin/top = 304.0
-margin/right = 993.0
-margin/bottom = 432.0
+margin/left = -806.0
+margin/top = -308.0
+margin/right = -970.0
+margin/bottom = -430.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 6 )
-flat = true
+textures/normal = ExtResource( 6 )
+textures/hover = ExtResource( 7 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="popup" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( 658.354, 373.995 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="ok" type="Button" parent="popup"]
 
@@ -97,7 +107,7 @@ margin/bottom = 109.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 8 )
+icon = ExtResource( 9 )
 flat = true
 
 [node name="pesan" type="Label" parent="popup"]
@@ -118,6 +128,10 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Area2D" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 16.8842, 20.6505 )
 
 [connection signal="pressed" from="toko" to="." method="_on_toko_pressed"]
 

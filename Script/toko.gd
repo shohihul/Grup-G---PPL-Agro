@@ -33,7 +33,10 @@ func _on_beliInfo_pressed():
 		labelBeliAlat.set_text("Beli " +a)
 	else:
 		windowBeli.show()
-	
+		
+func cekKoin():
+	if data.coin <= 0:
+		print("")
 
 func _on_air_pressed():
 	data.idBarang = 1

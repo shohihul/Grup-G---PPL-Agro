@@ -2,6 +2,8 @@ extends Node2D
 var popupMulai
 var popupKeluar
 var popupPengaturan
+var nama
+var textFieldNama
 var suaraOff
 var suaraOn
 var musikOff
@@ -13,10 +15,12 @@ func _ready():
 	popupMulai = get_node("popupMulai")
 	popupKeluar = get_node("popupKeluar")
 	popupPengaturan = get_node("popupPengaturan")
+	nama = get_node("nama")
 	suaraOff = get_node("popupPengaturan/background2/suaraOn/suaraOff")
 	suaraOn = get_node("popupPengaturan/background2/suaraOn")
 	musikOff = get_node("popupPengaturan/background2/musikOn/musikOff")
 	musikOn = get_node("popupPengaturan/background2/musikOn")
+	textFieldNama = get_node("nama/background2/TextFieldNama")
 	
 	
 func _on_mulai_pressed():
@@ -28,7 +32,8 @@ func _on_tidak_pressed(): #tombol tidak popup
 	suara.play("Tiny Button")
 
 func _on_ya_pressed(): #tombol ya popup
-	get_tree().change_scene('res://Scene/gameplay.tscn')
+	nama.show()
+	popupMulai.hide()
 	suara.play("Tiny Button")
 
 func _on_lanjutkan_pressed(): #tombol lanjutkan
@@ -87,3 +92,13 @@ func _on_musikOff_pressed():
 func _on_info_pressed():
 	suara.play("Tiny Button")
 	
+
+func _on_batal_pressed():
+	nama.hide()
+	suara.play("Tiny Button")
+
+
+func _on_simpan_pressed():
+	data.nama = textFieldNama.get_text()
+	get_tree().change_scene('res://Scene/gameplay.tscn')
+	pass

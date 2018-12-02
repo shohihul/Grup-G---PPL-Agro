@@ -6,6 +6,9 @@ var jumlah
 var pilihAlat = null
 var pilihJenisBibit
 var jenisBarang
+var nama = ""
+var aktifitas = ""
+var jumlahRumput = 0
 
 
 
@@ -21,28 +24,23 @@ var bibitKuning = 0 # 9
 
 var tandaSelect
 #var pohon = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-#tahap, jenisBibit, kadarAir
+#tahap, jenisBibit, kadarAir, pupuk, umur, jumlahBuah
 var pohon = [
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
-[0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
+[0,0,0,0,0,0],
 ]
-#func _ready():
-	
-#	for i in range(16):
-#	    pohon[i]=[]
-#	    for j in range(2): #tahap,tipeBibit
-#	        pohon[i][j]=0
+
