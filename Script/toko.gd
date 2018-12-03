@@ -44,7 +44,7 @@ func _on_air_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Air\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 20 Coin/Liter\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 5 Coin/Liter\n"
 	isiDeskripsi = isiDeskripsi + "\n air digunakan untuk memberikan nutrisi pada tanaman buah naga."
 	deskripsi.set_bbcode(isiDeskripsi)
 	
@@ -143,7 +143,7 @@ func _on_beli_pressed():
 	if data.idBarang ==  1:
 		data.air += data.jumlah
 		print("jumlah air adalah " + String(data.air))
-		data.coin -= 3*data.jumlah
+		data.coin -= 5*data.jumlah
 		windowBeli.hide()
 		popupPembelian.show()
 		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" Liter Air"
@@ -158,13 +158,13 @@ func _on_beli_pressed():
 			pembelian.set_text(pesanPembelian)
 		else:
 			data.sekop += 100
-			data.coin -= 30
+			data.coin -= 50
 			windowBeliAlat.hide()
 			popupPembelian.show()
 			pesanPembelian = "Berhasil membeli sekop"
 			pembelian.set_text(pesanPembelian)
 
-# ------------------------------------------------- Gunting
+# ------------------------------------------------- Celurit
 	if data.idBarang == 3:
 		if data.gunting > 0:
 			windowBeliAlat.hide()
@@ -173,7 +173,7 @@ func _on_beli_pressed():
 			pembelian.set_text(pesanPembelian)
 		else:
 			data.gunting += 100
-			data.coin -= 20
+			data.coin -= 50
 			windowBeliAlat.hide()
 			popupPembelian.show()
 			pesanPembelian = "Berhasil membeli sekop"
@@ -182,7 +182,7 @@ func _on_beli_pressed():
 # ------------------------------------------------- pupuk
 	if data.idBarang == 4:
 		data.pupuk += data.jumlah
-		data.coin -= 5*data.jumlah
+		data.coin -= 15*data.jumlah
 		windowBeli.hide()
 		popupPembelian.show()
 		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" pupuk"
@@ -206,7 +206,7 @@ func _on_beli_pressed():
 # ------------------------------------------------- Batang
 	if data.idBarang == 6:
 		data.penyangga += data.jumlah
-		data.coin -= 7*data.jumlah
+		data.coin -= 10*data.jumlah
 		windowBeli.hide()
 		popupPembelian.show()
 		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" penyangga"
@@ -215,7 +215,7 @@ func _on_beli_pressed():
 # ------------------------------------------------- Bibit Putih
 	if data.idBarang == 7:
 		data.bibitPutih += data.jumlah
-		data.coin -= 13*data.jumlah
+		data.coin -= 15*data.jumlah
 		windowBeli.hide()
 		popupPembelian.show()
 		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit putih"
@@ -233,7 +233,7 @@ func _on_beli_pressed():
 # ------------------------------------------------- Bibit Kuning
 	if data.idBarang == 9:
 		data.bibitKuning += data.jumlah
-		data.coin -= 15*data.jumlah
+		data.coin -= 20*data.jumlah
 		windowBeli.hide()
 		popupPembelian.show()
 		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit kuning"

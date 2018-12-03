@@ -15,7 +15,7 @@ func spawn():
 		pos.y   = rand_range(0+60, utils.view_size.height-60)
 		munculRumput.set_pos(pos)
 		get_node("container").add_child(munculRumput)
-		yield(utils.create_timer(rand_range(3, 10)), "timeout")
+		yield(utils.create_timer(rand_range(15, 30)), "timeout")
 		data.jumlahRumput += 1
 		print("rumput " +String(pos))
 	pass

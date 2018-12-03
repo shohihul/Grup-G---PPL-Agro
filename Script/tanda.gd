@@ -100,7 +100,7 @@ func _on_tanaman_pressed():
 		if data.pohon[data.tandaSelect][0] == 0:
 				data.aktifitas = "Anda belum mencangkul tanah"
 		elif data.pohon[data.tandaSelect][0] == 1:
-			data.aktifitas = "Memasang penyangga"
+			data.aktifitas = "Penyangga belum dipasang"
 		elif data.pohon[data.tandaSelect][0] == 2:
 # ----------------------------------------------- Merah
 			if data.pilihJenisBibit == 1:
@@ -139,14 +139,18 @@ func _on_tanaman_pressed():
 			if data.pohon[data.tandaSelect][0] == 0:
 				data.aktifitas = "Anda belum mencangkul tanah"
 			elif data.pohon[data.tandaSelect][0] == 1:
-				data.aktifitas = "Memasang penyangga"
+				data.aktifitas = "Penyangga belum dipasang"
 			elif data.pohon[data.tandaSelect][0] == 2:
 				data.aktifitas = "Bibit belum ditanam"
 			elif data.pohon[data.tandaSelect][0] == 3:
-				data.aktifitas = "Memberi Pupuk Organik"
-				tahap = 3
-				pupuk.show()
-				data.pupuk -= 1
+				if data.pohon[data.tandaSelect][3] == 1:
+					data.aktifitas = "Memberi Pupuk Organik"
+					tahap = 3
+					data.pohon[data.tandaSelect][3] = 1
+					pupuk.show()
+					data.pupuk -= 1
+				else:
+					data.aktifitas = "Pohon ini sudah diberi pupuk"
 # -------------------------------------------------- Memberi Pupuk
 # -------------------------------------------------- Memberi Air
 	if data.pilihAlat == "air":
@@ -156,7 +160,7 @@ func _on_tanaman_pressed():
 			if data.pohon[data.tandaSelect][0] == 0:
 				data.aktifitas = "Anda belum mencangkul tanah"
 			elif data.pohon[data.tandaSelect][0] == 1:
-				data.aktifitas = "Memasang penyangga"
+				data.aktifitas = "Penyangga belum dipasang"
 			elif data.pohon[data.tandaSelect][0] == 2:
 				data.aktifitas = "Bibit belum ditanam"
 			elif data.pohon[data.tandaSelect][0] == 3:

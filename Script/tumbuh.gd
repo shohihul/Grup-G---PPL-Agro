@@ -3,6 +3,7 @@ extends Node
 func _ready():
 	tumbuh()
 	berbuah()
+	airBerkurang()
 	pass
 func tumbuh():
 	while true:
@@ -15,6 +16,7 @@ func tumbuh():
 						else:
 							data.pohon[i][4] += 1
 		yield(utils.create_timer(60), "timeout")
+		print(data.pohon)
 	pass
 
 func berbuah():
@@ -30,3 +32,21 @@ func berbuah():
 		yield(utils.create_timer(180), "timeout")
 		print(data.pohon)
 	pass
+	
+func airBerkurang():
+	while true:
+		for i in range(16):
+			if data.pohon[i][0] == 3: #tahap
+				if data.pohon[i][2] <= -300:
+						data.pohon[i][0] = 2
+						data.pohon[i][1] = 0
+						data.pohon[i][2] = 0
+						data.pohon[i][3] = 0
+						data.pohon[i][4] = 0
+						data.pohon[i][5] = 0
+				else:
+					data.pohon[i][2] -=1
+		yield(utils.create_timer(1), "timeout")
+		print("-1")
+	pass
+		

@@ -581,13 +581,13 @@ flat = true
 
 [connection signal="pressed" from="petunjuk" to="." method="_on_petunjuk_pressed"]
 
-[connection signal="pressed" from="info" to="." method="_on_Button_pressed"]
-
 [connection signal="pressed" from="info" to="." method="_on_info_pressed"]
 
-[connection signal="pressed" from="pengaturan" to="." method="_on_pengaturan_pressed"]
+[connection signal="pressed" from="info" to="." method="_on_Button_pressed"]
 
 [connection signal="pressed" from="pengaturan" to="." method="_on_Button_2_pressed"]
+
+[connection signal="pressed" from="pengaturan" to="." method="_on_pengaturan_pressed"]
 
 [connection signal="pressed" from="popupMulai/background2/ya" to="." method="_on_ya_pressed"]
 

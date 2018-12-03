@@ -64,33 +64,33 @@ func berbuah():
 			for j in range(13):
 				var buah = get("buah"+String(j))
 
-				if data.pohon[i][5] == 1:
+				if data.pohon[i][5] >= 1:
 					b.buah0.show()
-				elif data.pohon[i][5] == 2:
+				if data.pohon[i][5] >= 2:
 					b.buah1.show()
-				elif data.pohon[i][5] == 3:
+				if data.pohon[i][5] >= 3:
 					b.buah2.show()
-				elif data.pohon[i][5] == 4:
+				if data.pohon[i][5] >= 4:
 					b.buah3.show()
-				elif data.pohon[i][5] == 5:
+				if data.pohon[i][5] >= 5:
 					b.buah4.show()
-				elif data.pohon[i][5] == 6:
+				if data.pohon[i][5] >= 6:
 					b.buah5.show()
-				elif data.pohon[i][5] == 7:
+				if data.pohon[i][5] >= 7:
 					b.buah6.show()
-				elif data.pohon[i][5] == 8:
+				if data.pohon[i][5] >= 8:
 					b.buah7.show()
-				elif data.pohon[i][5] == 9:
+				if data.pohon[i][5] >= 9:
 					b.buah8.show()
-				elif data.pohon[i][5] == 10:
+				if data.pohon[i][5] >= 10:
 					b.buah9.show()
-				elif data.pohon[i][5] == 11:
+				if data.pohon[i][5] >= 11:
 					b.buah10.show()
-				elif data.pohon[i][5] == 12:
+				if data.pohon[i][5] >= 12:
 					b.buah11.show()
-				elif data.pohon[i][5] == 13:
+				if data.pohon[i][5] >= 13:
 					b.buah12.show()
-				elif data.pohon[i][5] == 14:
+				if data.pohon[i][5] >= 14:
 					b.buah13.show()
 
 		yield(utils.create_timer(1), "timeout")
@@ -100,25 +100,25 @@ func aktifitas():
 	aktifitas.set_text(data.aktifitas)
 
 func load_data():
-	for i in range(16):
-		var a = get("titik"+String(i))
-		#tahap
-		if data.pohon[i][0] >= 1:
-			a.tanah.show()
-		if data.pohon[i][0] >= 2:
-			a.penyangga.show()
-		if data.pohon[i][0] >= 3:
-			if data.pohon[i][2] <= 0:
-				a.popupButuhAir.show()
-			if data.pohon[i][1] == 1:
-				a.bibitMerah.show()
-			elif data.pohon[i][1] == 2:
-				a.bibitKuning.show()
-			elif data.pohon[i][1] == 3:
-				a.bibitPutih.show()
-#		if data.pohon[i][2] <= 0:
-#			if data.pohon[i][0] >= 3:
-#				a.popupButuhAir.show()
+	while true:
+		for i in range(16):
+			var a = get("titik"+String(i))
+			#tahap
+			if data.pohon[i][0] >= 1:
+				a.tanah.show()
+			if data.pohon[i][0] >= 2:
+				a.penyangga.show()
+			if data.pohon[i][0] >= 3:
+				if data.pohon[i][2] <= 0:
+					a.popupButuhAir.show()
+				if data.pohon[i][1] == 1:
+					a.bibitMerah.show()
+				elif data.pohon[i][1] == 2:
+					a.bibitKuning.show()
+				elif data.pohon[i][1] == 3:
+					a.bibitPutih.show()
+		yield(utils.create_timer(1), "timeout")
+	pass
 
 	for i in range (data.jumlahRumput):
 		randomize()
