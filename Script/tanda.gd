@@ -28,7 +28,7 @@ onready var lahan = load("res://Script/lahan1.gd")
 
 
 #var jenisBibit
-var tahap = 0
+var tahap
 
 
 func _ready():
@@ -75,6 +75,7 @@ func _on_tanaman_pressed():
 				tanda.hide()
 				tahap = 1
 				data.sekop -=1
+				data.pohon[data.tandaSelect][0] = tahap
 			elif data.pohon[data.tandaSelect][0] == 1:
 				data.aktifitas = "Tanah ini sudah dicangkul"
 # -------------------------------------------------- Menggali Tanah
@@ -91,6 +92,7 @@ func _on_tanaman_pressed():
 				penyangga.show()
 				tahap = 2
 				data.penyangga -= 1
+				data.pohon[data.tandaSelect][0] = tahap
 			elif data.pohon[data.tandaSelect][0] == 2:
 				data.aktifitas = "Penyangga sudah dipasang"
 # -------------------------------------------------- Pemasangan Penyangga
@@ -110,6 +112,7 @@ func _on_tanaman_pressed():
 					bibitMerah.show()
 					tahap = 3
 					data.bibitMerah -= 1
+					data.pohon[data.tandaSelect][0] = tahap
 # ----------------------------------------------- Kuning
 			if data.pilihJenisBibit == 2:
 				if data.bibitKuning == 0:
@@ -118,6 +121,7 @@ func _on_tanaman_pressed():
 					bibitKuning.show()
 					tahap = 3
 					data.bibitKuning -= 1
+					data.pohon[data.tandaSelect][0] = tahap
 # ----------------------------------------------- Putih
 			if data.pilihJenisBibit == 3:
 				if data.bibitPutih == 0:
@@ -126,6 +130,7 @@ func _on_tanaman_pressed():
 					bibitPutih.show()
 					tahap = 3
 					data.bibitPutih -= 1
+					data.pohon[data.tandaSelect][0] = tahap
 			data.pohon[data.tandaSelect][1] = data.pilihJenisBibit
 		elif tahap == 3:
 			data.aktifitas = "Cari tempat lain"
@@ -149,6 +154,7 @@ func _on_tanaman_pressed():
 					data.pohon[data.tandaSelect][3] = 1
 					pupuk.show()
 					data.pupuk -= 1
+					data.pohon[data.tandaSelect][0] = tahap
 				else:
 					data.aktifitas = "Pohon ini sudah diberi pupuk"
 # -------------------------------------------------- Memberi Pupuk
@@ -166,7 +172,6 @@ func _on_tanaman_pressed():
 			elif data.pohon[data.tandaSelect][0] == 3:
 				if data.pohon[data.tandaSelect][2] >0:
 					data.aktifitas = "Pohon ini sudah disiram"
-					tahap = 3
 				elif data.pohon[data.tandaSelect][2] <=0:
 					data.aktifitas = "Menyiram Pohon"
 					popupButuhAir.hide()
@@ -174,9 +179,17 @@ func _on_tanaman_pressed():
 					tahap = 3
 					data.pohon[data.tandaSelect][2] = 100
 					print("Jumlah Air " +String(data.pohon[data.tandaSelect][2]))
+					data.pohon[data.tandaSelect][0] = tahap
 # -------------------------------------------------- Memberi Air
+# -------------------------------------------------- Panen
+	if data.pilihAlat == "celurit":
+		if data.pohon[data.tandaSelect][5] <= 0:
+			data.aktifitas = "Belum bisa Panen"
+		else:
+			data
+# -------------------------------------------------- Panen
 
-	data.pohon[data.tandaSelect][0] = tahap
+#	data.pohon[data.tandaSelect][0] = tahap
 	if data.pohon[data.tandaSelect][0] >= 3:
 		if data.pohon[data.tandaSelect][2] <= 0:
 			popupButuhAir.show()

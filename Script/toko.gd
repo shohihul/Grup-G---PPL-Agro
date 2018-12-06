@@ -15,8 +15,7 @@ var a
 var pesanPembelian
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	
 	pass
 
 func _on_tutup_pressed():
@@ -148,6 +147,7 @@ func _on_beli_pressed():
 		popupPembelian.show()
 		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" Liter Air"
 		pembelian.set_text(pesanPembelian)
+#		var inputAir =db.pmsc_query("insert into naga_ values(null, null, null,'" +str(data.air)+"', null, null")
 
 # ------------------------------------------------- Sekop
 	if data.idBarang == 2:

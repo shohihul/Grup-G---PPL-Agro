@@ -1,17 +1,17 @@
 extends Node
 
-var coin = 1500
+
 var idBarang = 0
 var jumlah
 var pilihAlat = null
 var pilihJenisBibit
 var jenisBarang
-var nama = ""
 var aktifitas = ""
 var jumlahRumput = 0
 
-
-
+# Inventaris
+var nama = ""
+var coin = 1500
 var air = 0 # 1
 var sekop = 0 # 2
 var gunting = 0 # 3

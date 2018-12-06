@@ -11,6 +11,7 @@ var musikOn
 var musik = load("res://Script/musik.gd").new()
 
 
+
 func _ready():
 	popupMulai = get_node("popupMulai")
 	popupKeluar = get_node("popupKeluar")
