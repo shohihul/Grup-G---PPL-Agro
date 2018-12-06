@@ -8,7 +8,9 @@ func _ready():
 
 func _on_rumput_pressed():
 	if data.pilihAlat == "celurit":
-		data.coin += 20
-		data.jumlahRumput -= 1
-		coin.coin.set_text("COIN = " +String(data.coin))
-		queue_free()
+		if data.gunting <= 0:
+			data.aktifitas = "Tidak punya celurit atau celuritmu sudah rusak"
+		else:
+			data.coin += 5
+			data.celurit -1
+			data.jumlahRumput -= 1

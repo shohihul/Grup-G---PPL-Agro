@@ -15,7 +15,7 @@ func tumbuh():
 							data.pohon[i][4] += 2
 						else:
 							data.pohon[i][4] += 1
-		yield(utils.create_timer(60), "timeout")
+		yield(utils.create_timer(2), "timeout")
 		print(data.pohon)
 	pass
 
@@ -29,7 +29,7 @@ func berbuah():
 							data.pohon[i][5] += 2
 						else:
 							data.pohon[i][5] += 1
-		yield(utils.create_timer(180), "timeout")
+		yield(utils.create_timer(5), "timeout")
 		print(data.pohon)
 	pass
 	
@@ -37,7 +37,7 @@ func airBerkurang():
 	while true:
 		for i in range(16):
 			if data.pohon[i][0] == 3: #tahap
-				if data.pohon[i][2] <= -300:
+				if data.pohon[i][2] <= -50:
 						data.pohon[i][0] = 2
 						data.pohon[i][1] = 0
 						data.pohon[i][2] = 0

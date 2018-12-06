@@ -150,11 +150,11 @@ func _on_tanaman_pressed():
 			elif data.pohon[data.tandaSelect][0] == 3:
 				if data.pohon[data.tandaSelect][3] == 1:
 					data.aktifitas = "Memberi Pupuk Organik"
-					tahap = 3
+#					tahap = 3
 					data.pohon[data.tandaSelect][3] = 1
 					pupuk.show()
 					data.pupuk -= 1
-					data.pohon[data.tandaSelect][0] = tahap
+#					data.pohon[data.tandaSelect][0] = tahap
 				else:
 					data.aktifitas = "Pohon ini sudah diberi pupuk"
 # -------------------------------------------------- Memberi Pupuk
@@ -176,25 +176,36 @@ func _on_tanaman_pressed():
 					data.aktifitas = "Menyiram Pohon"
 					popupButuhAir.hide()
 					data.air -= 1
-					tahap = 3
+#					tahap = 3
 					data.pohon[data.tandaSelect][2] = 100
 					print("Jumlah Air " +String(data.pohon[data.tandaSelect][2]))
-					data.pohon[data.tandaSelect][0] = tahap
+#					data.pohon[data.tandaSelect][0] = tahap
 # -------------------------------------------------- Memberi Air
 # -------------------------------------------------- Panen
 	if data.pilihAlat == "celurit":
 		if data.pohon[data.tandaSelect][5] <= 0:
 			data.aktifitas = "Belum bisa Panen"
 		else:
-			data
+			var buahPanen = data.pohon[data.tandaSelect][5]
+			if data.pohon[data.tandaSelect][1] == 1:
+				data.buahMerah += buahPanen
+				data.pohon[data.tandaSelect][5] = 0
+			elif data.pohon[data.tandaSelect][1] == 2:
+				data.buahKuning += buahPanen
+				data.pohon[data.tandaSelect][5] = 0
+			elif data.pohon[data.tandaSelect][1] == 3:
+				data.buahPutih += buahPanen
+				data.pohon[data.tandaSelect][5] = 0
+			data.aktifitas = "Panen " +str(buahPanen) +" Buah Naga"
+			
 # -------------------------------------------------- Panen
 
 #	data.pohon[data.tandaSelect][0] = tahap
-	if data.pohon[data.tandaSelect][0] >= 3:
-		if data.pohon[data.tandaSelect][2] <= 0:
-			popupButuhAir.show()
-		elif data.pohon[data.tandaSelect][2] > 0:
-			popupButuhAir.hide()
+#	if data.pohon[data.tandaSelect][0] >= 3:
+#		if data.pohon[data.tandaSelect][2] <= 0:
+#			popupButuhAir.show()
+#		elif data.pohon[data.tandaSelect][2] > 0:
+#			popupButuhAir.hide()
 	
 
 

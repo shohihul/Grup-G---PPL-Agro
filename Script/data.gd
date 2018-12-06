@@ -2,7 +2,6 @@ extends Node
 
 
 var idBarang = 0
-var jumlah
 var pilihAlat = null
 var pilihJenisBibit
 var jenisBarang
@@ -18,9 +17,13 @@ var gunting = 0 # 3
 var pupuk = 0 # 4
 var sertifikat = 0 # 5
 var penyangga = 0 # 6
-var bibitPutih = 0 # 7
-var bibitMerah = 0 # 8
-var bibitKuning = 0 # 9
+var bibitMerah = 0 # 7
+var bibitKuning = 0 # 8
+var bibitPutih = 0 # 9
+
+var buahMerah = 0 # 10
+var buahKuning = 0 # 11
+var buahPutih = 0 # 12
 
 var tandaSelect
 #var pohon = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]

@@ -47,13 +47,20 @@ func _ready():
 	load_data()
 	pohonBesar()
 	berbuah()
+	
 
 func pohonBesar():
 	while true:
 		for i in range(16):
 			var z = get("titik"+String(i))
-			if data.pohon[i][4] == 10:
-				z.pohonBesar.show()
+			if data.pohon[i][4] >= 3:
+				if data.pohon[i][4] == 10:
+					z.pohonBesar.show()
+					z.bibitMerah.hide()
+					z.bibitKuning.hide()
+					z.bibitPutih.hide()
+			else:
+				z.pohonBesar.hide()
 		yield(utils.create_timer(1), "timeout")
 	pass
 
@@ -63,7 +70,21 @@ func berbuah():
 			var b = get("titik"+String(i))
 			for j in range(13):
 				var buah = get("buah"+String(j))
-
+				if data.pohon[i][5] >= 0:
+					b.buah0.hide()
+					b.buah1.hide()
+					b.buah2.hide()
+					b.buah3.hide()
+					b.buah4.hide()
+					b.buah5.hide()
+					b.buah6.hide()
+					b.buah7.hide()
+					b.buah8.hide()
+					b.buah9.hide()
+					b.buah10.hide()
+					b.buah11.hide()
+					b.buah12.hide()
+					b.buah13.hide()
 				if data.pohon[i][5] >= 1:
 					b.buah0.show()
 				if data.pohon[i][5] >= 2:
@@ -97,7 +118,10 @@ func berbuah():
 	pass
 
 func aktifitas():
-	aktifitas.set_text(data.aktifitas)
+	while true:
+		aktifitas.set_text(data.aktifitas)
+		yield(utils.create_timer(1), "timeout")
+	pass
 
 func load_data():
 	while true:
@@ -117,6 +141,8 @@ func load_data():
 					a.bibitKuning.show()
 				elif data.pohon[i][1] == 3:
 					a.bibitPutih.show()
+			elif data.pohon[i][0] < 3:
+				a.popupButuhAir.hide()
 		yield(utils.create_timer(1), "timeout")
 	pass
 

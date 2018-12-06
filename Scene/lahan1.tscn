@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Script/lahan1.gd" type="Script" id=1]
 [ext_resource path="res://Asset/game/grass.png" type="Texture" id=2]
@@ -6,16 +6,15 @@
 [ext_resource path="res://Scene/spawnerRumput.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scene/tumbuh.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/alat.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scene/coin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Asset/kembali.png" type="Texture" id=8]
-[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://Asset/kembali.png" type="Texture" id=7]
+[ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 20
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 9 )
+font/font = ExtResource( 8 )
 
 [node name="lahan1" type="Node2D"]
 
@@ -148,10 +147,6 @@ margin/bottom = 629.0
 
 transform/pos = Vector2( -0.701562, -1.66923 )
 
-[node name="coin" parent="." instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 1168.18, 678.158 )
-
 [node name="kembali" type="Button" parent="."]
 
 focus/ignore_mouse = false
@@ -165,7 +160,7 @@ margin/bottom = 49.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 8 )
+icon = ExtResource( 7 )
 flat = true
 
 [node name="aktifitas" type="Label" parent="."]

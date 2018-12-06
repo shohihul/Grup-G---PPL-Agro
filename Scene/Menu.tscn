@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=24 format=1]
 
 [ext_resource path="res://Script/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset/Menu/home/bgHome.png" type="Texture" id=2]
@@ -20,8 +20,6 @@
 [ext_resource path="res://Asset/soundOn.png" type="Texture" id=18]
 [ext_resource path="res://Asset/off].png" type="Texture" id=19]
 [ext_resource path="res://Asset/musik.png" type="Texture" id=20]
-[ext_resource path="res://addons/PMSConnector/pmsconPlugin.gd" type="Script" id=21]
-[ext_resource path="res://addons/PMSConnector/icon.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -574,13 +572,6 @@ enabled_focus_mode = 2
 shortcut = null
 icon = ExtResource( 19 )
 flat = true
-
-[node name="PMSConnector" type="Node" parent="."]
-
-script/script = ExtResource( 21 )
-__meta__ = {
-"_editor_icon": ExtResource( 22 )
-}
 
 [connection signal="pressed" from="mulai" to="." method="_on_mulai_pressed"]
 

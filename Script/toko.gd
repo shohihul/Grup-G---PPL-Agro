@@ -12,7 +12,9 @@ var isiDeskripsi = ""
 onready var tokoList = get_node("tokoList")
 var idBarang
 var a
+var harga = 0
 var pesanPembelian
+var total = 0
 
 func _ready():
 	
@@ -137,107 +139,109 @@ func _on_bibitKuning_pressed():
 
 
 func _on_beli_pressed():
-	data.jumlah = pilihJumlah.get_value()
 # ------------------------------------------------- Air
 	if data.idBarang ==  1:
-		data.air += data.jumlah
-		print("jumlah air adalah " + String(data.air))
-		data.coin -= 5*data.jumlah
-		windowBeli.hide()
-		popupPembelian.show()
-		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" Liter Air"
-		pembelian.set_text(pesanPembelian)
-#		var inputAir =db.pmsc_query("insert into naga_ values(null, null, null,'" +str(data.air)+"', null, null")
-
+		harga = 5
+		total = harga*pilihJumlah.get_value()
+		if data.coin < total:
+			pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+		else:
+			data.air += pilihJumlah.get_value()
+			pesanPembelian = "Berhasil membeli " +String(pilihJumlah.get_value()) +" Liter Air"
 # ------------------------------------------------- Sekop
 	if data.idBarang == 2:
 		if data.sekop > 0:
-			windowBeliAlat.hide()
-			popupPembelian.show()
 			pesanPembelian = "Anda sudah punya sekop"
-			pembelian.set_text(pesanPembelian)
 		else:
-			data.sekop += 100
-			data.coin -= 50
-			windowBeliAlat.hide()
-			popupPembelian.show()
-			pesanPembelian = "Berhasil membeli sekop"
-			pembelian.set_text(pesanPembelian)
+			harga = 50
+			total = harga
+			if data.coin < total:
+				pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+			else:
+				data.sekop += 10
+				pesanPembelian = "Berhasil membeli sekop"
 
 # ------------------------------------------------- Celurit
 	if data.idBarang == 3:
 		if data.gunting > 0:
-			windowBeliAlat.hide()
-			popupPembelian.show()
-			pesanPembelian = "Anda sudah punya sekop"
-			pembelian.set_text(pesanPembelian)
+			pesanPembelian = "Anda sudah punya Celurit"
 		else:
-			data.gunting += 100
-			data.coin -= 50
-			windowBeliAlat.hide()
-			popupPembelian.show()
-			pesanPembelian = "Berhasil membeli sekop"
-			pembelian.set_text(pesanPembelian)
+			harga = 50
+			total = harga
+			if data.coin < total:
+				pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+			else:
+				data.gunting += 10
+				pesanPembelian = "Berhasil membeli Celurit"
 
 # ------------------------------------------------- pupuk
 	if data.idBarang == 4:
-		data.pupuk += data.jumlah
-		data.coin -= 15*data.jumlah
-		windowBeli.hide()
-		popupPembelian.show()
-		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" pupuk"
-		pembelian.set_text(pesanPembelian)
+		harga = 15
+		total = harga*pilihJumlah.get_value()
+		if data.coin < total:
+			pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+		else:
+			data.pupuk += pilihJumlah.get_value()
+			pesanPembelian = "Berhasil membeli " +String(pilihJumlah.get_value()) +" pupuk"
 
 # ------------------------------------------------- Sertifikat Tanah
 	if data.idBarang == 5:
 		if data.sertifikat > 0:
-			windowBeliAlat.hide()
-			popupPembelian.show()
 			pesanPembelian = "Anda sudah punya lahan"
-			pembelian.set_text(pesanPembelian)
 		else:
-			data.sertifikat += 1
-			data.coin -= 1000
-			windowBeliAlat.hide()
-			popupPembelian.show()
-			pesanPembelian = "Berhasil membeli lahan"
-			pembelian.set_text(pesanPembelian)
+			harga = 1000
+			total = harga
+			if data.coin < total:
+				pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+			else:
+				data.sertifikat += 1
+				pesanPembelian = "Berhasil membeli lahan"
 
 # ------------------------------------------------- Batang
 	if data.idBarang == 6:
-		data.penyangga += data.jumlah
-		data.coin -= 10*data.jumlah
-		windowBeli.hide()
-		popupPembelian.show()
-		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" penyangga"
-		pembelian.set_text(pesanPembelian)
+		harga = 10
+		total = harga*pilihJumlah.get_value()
+		if data.coin < total:
+			pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+		else:
+			data.penyangga += pilihJumlah.get_value()
+			pesanPembelian = "Berhasil membeli " +String(pilihJumlah.get_value()) +" penyangga"
 
 # ------------------------------------------------- Bibit Putih
 	if data.idBarang == 7:
-		data.bibitPutih += data.jumlah
-		data.coin -= 15*data.jumlah
-		windowBeli.hide()
-		popupPembelian.show()
-		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit putih"
-		pembelian.set_text(pesanPembelian)
+		harga = 15
+		total = harga*pilihJumlah.get_value()
+		if data.coin < total:
+			pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+		else:
+			data.bibitPutih += pilihJumlah.get_value()
+		pesanPembelian = "Berhasil membeli " +String(pilihJumlah.get_value()) +" buah bibit putih"
 
 # ------------------------------------------------- Bibit Merah
 	if data.idBarang == 8:
-		data.bibitMerah += data.jumlah
-		data.coin -= 10*data.jumlah
-		windowBeli.hide()
-		popupPembelian.show()
-		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit merah"
-		pembelian.set_text(pesanPembelian)
+		harga = 10
+		total = harga*pilihJumlah.get_value()
+		if data.coin < total:
+			pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+		else:
+			data.bibitMerah += pilihJumlah.get_value()
+		pesanPembelian = "Berhasil membeli " +String(pilihJumlah.get_value()) +" buah bibit merah"
 
 # ------------------------------------------------- Bibit Kuning
 	if data.idBarang == 9:
-		data.bibitKuning += data.jumlah
-		data.coin -= 20*data.jumlah
-		windowBeli.hide()
-		popupPembelian.show()
-		pesanPembelian = "Berhasil membeli " +String(data.jumlah) +" buah bibit kuning"
-		pembelian.set_text(pesanPembelian)
+		harga = 20
+		total = harga*pilihJumlah.get_value()
+		if data.coin < total:
+			pesanPembelian = "Gagal Membeli, Koin Anda Kurang"
+		else:
+			data.bibitKuning += pilihJumlah.get_value()
+		pesanPembelian = "Berhasil membeli " +String(pilihJumlah.get_value()) +" buah bibit kuning"
+		
+	data.coin -= total
+	windowBeliAlat.hide()
+	windowBeli.hide()
+	popupPembelian.show()
+	pembelian.set_text(pesanPembelian)
 
 # Scene Gudang
 func _on_gudang_pressed():
