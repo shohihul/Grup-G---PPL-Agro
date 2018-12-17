@@ -113,6 +113,7 @@ func _on_tanaman_pressed():
 					tahap = 3
 					data.bibitMerah -= 1
 					data.pohon[data.tandaSelect][0] = tahap
+					data.aktifitas = "Menanam Bibit Merah"
 # ----------------------------------------------- Kuning
 			if data.pilihJenisBibit == 2:
 				if data.bibitKuning == 0:
@@ -122,6 +123,8 @@ func _on_tanaman_pressed():
 					tahap = 3
 					data.bibitKuning -= 1
 					data.pohon[data.tandaSelect][0] = tahap
+					data.aktifitas = "Menanam Bibit Kuning"
+					
 # ----------------------------------------------- Putih
 			if data.pilihJenisBibit == 3:
 				if data.bibitPutih == 0:
@@ -131,6 +134,7 @@ func _on_tanaman_pressed():
 					tahap = 3
 					data.bibitPutih -= 1
 					data.pohon[data.tandaSelect][0] = tahap
+					data.aktifitas = "Menanam Bibit Putih"
 			data.pohon[data.tandaSelect][1] = data.pilihJenisBibit
 		elif tahap == 3:
 			data.aktifitas = "Cari tempat lain"
@@ -148,7 +152,7 @@ func _on_tanaman_pressed():
 			elif data.pohon[data.tandaSelect][0] == 2:
 				data.aktifitas = "Bibit belum ditanam"
 			elif data.pohon[data.tandaSelect][0] == 3:
-				if data.pohon[data.tandaSelect][3] == 1:
+				if data.pohon[data.tandaSelect][3] == 0:
 					data.aktifitas = "Memberi Pupuk Organik"
 #					tahap = 3
 					data.pohon[data.tandaSelect][3] = 1

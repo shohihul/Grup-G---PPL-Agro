@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Script/gamePlay.gd" type="Script" id=1]
 [ext_resource path="res://Asset/game/grass.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Asset/Menu/popup/ok.png" type="Texture" id=9]
 [ext_resource path="res://Asset/CooperHewitt-Bold.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scene/nama.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Asset/kembali.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -133,6 +134,23 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 1168.82, 661.375 )
 
+[node name="kembali" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 30.0
+margin/top = 23.0
+margin/right = 136.0
+margin/bottom = 54.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 12 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
 [connection signal="pressed" from="toko" to="." method="_on_toko_pressed"]
 
 [connection signal="pressed" from="gudang" to="." method="_on_gudang_pressed"]
@@ -140,5 +158,7 @@ transform/pos = Vector2( 1168.82, 661.375 )
 [connection signal="pressed" from="lahanTanam" to="." method="_on_lahanTanam_pressed"]
 
 [connection signal="pressed" from="popup/ok" to="." method="_on_ok_pressed"]
+
+[connection signal="pressed" from="kembali" to="." method="_on_kembali_pressed"]
 
 

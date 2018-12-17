@@ -44,3 +44,6 @@ func _on_ok_pressed():
 #		}
 #	}
 #	return save_dict
+
+func _on_kembali_pressed():
+	get_tree().change_scene('res://Scene/menu.tscn')

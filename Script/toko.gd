@@ -56,7 +56,7 @@ func _on_sekop_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Sekop\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 80 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 50 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nCangkul merupakan alat yang digunakan untuk menghancurkan tanah agar bias menanam bibit buah naga."
 	deskripsi.set_bbcode(isiDeskripsi)
 
@@ -68,7 +68,7 @@ func _on_celurit_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Celurit\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 70 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 50 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nCelurit digunakan untuk memotong tangkai tanaman buah naga serta digunakan untuk memotong buah naga dari batang apabila telah matang."
 	deskripsi.set_bbcode(isiDeskripsi)
 
@@ -79,7 +79,7 @@ func _on_pupuk_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Pupuk\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 100 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 15 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nPupuk digunakan untuk memberikan nutrisi pada tanaman buah naga."
 	deskripsi.set_bbcode(isiDeskripsi)
 
@@ -91,7 +91,7 @@ func _on_sertifikatTanah_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Sertifikat Tanah\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 250 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 1000 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nTanah merupakan media untuk menanam bibit buah naga."
 	deskripsi.set_bbcode(isiDeskripsi)
 
@@ -101,7 +101,7 @@ func _on_batang_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Batang penyangga\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 25 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 10 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nTiang penyangga digunakan sebagai penyangga tanaman buah naga agar tetap kokoh serta tanaman buah naga tidak menjalar kemana-mana."
 	deskripsi.set_bbcode(isiDeskripsi)
 	
@@ -111,7 +111,7 @@ func _on_bibitPutih_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Bibit Pohon Buah Naga Putih\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 35 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 15 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nBibit in sebagai calon tanaman yang siap untuk ditanam."
 	deskripsi.set_bbcode(isiDeskripsi)
 
@@ -122,7 +122,7 @@ func _on_bibitMerah_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Bibit Pohon Buah Naga Merah\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 25 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 10 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nBibit in sebagai calon tanaman yang siap untuk ditanam."
 	deskripsi.set_bbcode(isiDeskripsi)
 
@@ -133,7 +133,7 @@ func _on_bibitKuning_pressed():
 	print("Id barang " +String(data.idBarang))
 	windowInfo.popup()
 	isiDeskripsi = "Nama : Bibit Pohon Buah Naga Kuning\n"
-	isiDeskripsi = isiDeskripsi + "Harga : 55 Coin\n"
+	isiDeskripsi = isiDeskripsi + "Harga : 20 Coin\n"
 	isiDeskripsi = isiDeskripsi + "\nBibit in sebagai calon tanaman yang siap untuk ditanam."
 	deskripsi.set_bbcode(isiDeskripsi)
 

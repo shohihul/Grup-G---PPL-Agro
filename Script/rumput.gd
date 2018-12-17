@@ -12,5 +12,6 @@ func _on_rumput_pressed():
 			data.aktifitas = "Tidak punya celurit atau celuritmu sudah rusak"
 		else:
 			data.coin += 5
-			data.celurit -1
+			data.gunting -1
 			data.jumlahRumput -= 1
+			queue_free()

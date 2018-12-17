@@ -15,7 +15,7 @@ func tumbuh():
 							data.pohon[i][4] += 2
 						else:
 							data.pohon[i][4] += 1
-		yield(utils.create_timer(2), "timeout")
+		yield(utils.create_timer(60), "timeout")
 		print(data.pohon)
 	pass
 
@@ -29,7 +29,7 @@ func berbuah():
 							data.pohon[i][5] += 2
 						else:
 							data.pohon[i][5] += 1
-		yield(utils.create_timer(5), "timeout")
+		yield(utils.create_timer(180), "timeout")
 		print(data.pohon)
 	pass
 	

@@ -225,7 +225,6 @@ flat = true
 
 [node name="WindowDialogBeli" type="WindowDialog" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -311,6 +310,7 @@ suffix = ""
 
 [node name="WindowDialogBeliAlat" type="WindowDialog" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true

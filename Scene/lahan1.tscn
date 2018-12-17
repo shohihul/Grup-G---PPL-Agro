@@ -174,7 +174,6 @@ margin/top = 26.0
 margin/right = 671.0
 margin/bottom = 57.0
 custom_fonts/font = SubResource( 1 )
-text = "POUP"
 align = 1
 valign = 1
 percent_visible = 1.0
